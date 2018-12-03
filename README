@@ -1,0 +1,64 @@
+===============================================================================================
+ChiP-seq pipeline Overview
+===============================================================================================
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+DESCRIPTION
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+This software in designed to analyze ChIP-seq data. The output it generates is a file which 
+contains the target gene.
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+INSTALLATION AND DEPENDENCIES
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+This pipeline is avaliable as a GitHub repository, which contains the scripts required for 
+the ChIP-seq analysis.
+It can be found by  using this link:
+https://github.com/lauralh5/chipseq_pipeline.git
+
+This software requires the following programs:
+- SGE: https://arc.liv.ac.uk/trac/SGE/
+- bowtie: http://bowtie-bio.sourceforge.net/index.shtml
+- macs2: https://github.com/taoliu/MACS.git
+- Java: https://www.java.com/download/
+- R: https://cran.r-project.org
+- RStudio: https://www.rstudio.com/products/rstudio/download/
+
+The PeakAnnotator Java software will be provided when executing this pipeline. To ensure 
+that PeakAnnotator program runs correctly, you could read the usage requirements of this 
+software. You can do it by clicking this link:
+https://www.ebi.ac.uk/sites/ebi.ac.uk/files/groups/bertone/software/PeakAnnotator_Java_README
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+USAGE
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+We recommend downloading the chipseq_pipeline.git in a located folder, usually called  opt, 
+which normaly contains all the softwares.
+
+We also recommend to create an independent directory (for example "temp") to generate your 
+working directory. This is where your results will be stored.
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+EXAMPLE
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+This pipeline works with just one parameter. In the provided example it is a file called 
+"params.txt", which is included in the repository. Params contains all the routes  of the 
+parameters that will be needed for the data analysis of the example:
+
+- installation_folder: contains the route of the folder that contains the chipseq_pipeline
+- working_directory: here you can specify where you want your data to be generated ("temp")
+- main_folder: name of the folder with the experiment data
+- genome_folder: route to the folder that contains the genome of reference for the example
+- annotation_folder: route to the folder that contains the annotation of the reference 
+  genome for the example
+- chip_location: route to the folder that contains the short reads (fastq file) of the 
+  chip sample for the example
+- input_location: route to the folder that contains the fastq file of the input or 
+  control for the example.
+
+
+

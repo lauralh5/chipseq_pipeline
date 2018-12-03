@@ -1,0 +1,43 @@
+#! /bin/bash
+
+echo "My chipseq pipeline"
+
+## Read params
+PARAMS=$1
+
+INS_FOLDER=$(grep installation_folder $PARAMS | awk '{ print $2 }')
+WORK_DIR=$(grep working_directory $PARAMS | awk '{ print $2 }')
+echo $WORK_DIR
+MAIN_FOLDER=$(grep main_folder $PARAMS | awk '{ print $2 }')
+echo $MAIN_FOLDER
+GENOME=$(grep genome_folder $PARAMS | awk '{ print $2 }')
+echo $GENOME
+ANNOTATION=$(grep annotation_folder $PARAMS | awk '{ print $2 }')
+echo $ANNOTATION
+CHIP_LOC=$(grep chip_location $PARAMS | awk '{ print $2 }')
+echo $CHIP_LOC
+INPUT_LOC=$(grep input_location $PARAMS | awk '{ print $2 }')
+echo $INPUT_LOC
+
+## BUILD WORKING DIRECTORY
+cd ${WORK_DIR}
+mkdir ${MAIN_FOLDER} 
+cd ${MAIN_FOLDER}
+mkdir genome annotation results samples log
+cd samples
+mkdir input chip
+
+## Accession to genome folder
+
+cd ../genome
+cp ${GENOME} genome.fa
+## Building genome index
+
+bowtie-build genome.fa index
+
+cd ../annotation
+cp ${ANNOTATION} annotation.gtf
+
+## MAPPING LECTURES TO THE GENOME
+qsub -N chip -o chip ${INS_FOLDER}/read_mapping.sh ${WORK_DIR}/${MAIN_FOLDER}/samples/chip ${CHIP_LOC} chip $WORK_DIR $MAIN_FOLDER $INS_FOLDER
+qsub -N input -o input ${INS_FOLDER}/read_mapping.sh ${WORK_DIR}/${MAIN_FOLDER}/samples/input ${INPUT_LOC} input $WORK_DIR $MAIN_FOLDER $INS_FOLDER
