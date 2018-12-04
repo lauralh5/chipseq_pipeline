@@ -1,5 +1,10 @@
 #! /bin/bash
 
+## Authors: Inés Hidalgo y Laura López
+## Date: 7-12-2018
+
+## ChIP-Seq pipeline for the analysis of two samples (chip and input)
+
 echo "My chipseq pipeline"
 
 ## Read params
@@ -19,7 +24,8 @@ echo $CHIP_LOC
 INPUT_LOC=$(grep input_location $PARAMS | awk '{ print $2 }')
 echo $INPUT_LOC
 
-## BUILD WORKING DIRECTORY
+## Building working directory
+
 cd ${WORK_DIR}
 mkdir ${MAIN_FOLDER} 
 cd ${MAIN_FOLDER}
@@ -31,6 +37,7 @@ mkdir input chip
 
 cd ../genome
 cp ${GENOME} genome.fa
+
 ## Building genome index
 
 bowtie-build genome.fa index
@@ -38,6 +45,7 @@ bowtie-build genome.fa index
 cd ../annotation
 cp ${ANNOTATION} annotation.gtf
 
-## MAPPING LECTURES TO THE GENOME
+## Mapping lectures to the genome using the read_mapping.sh script
+
 qsub -N chip -o chip ${INS_FOLDER}/read_mapping.sh ${WORK_DIR}/${MAIN_FOLDER}/samples/chip ${CHIP_LOC} chip $WORK_DIR $MAIN_FOLDER $INS_FOLDER
 qsub -N input -o input ${INS_FOLDER}/read_mapping.sh ${WORK_DIR}/${MAIN_FOLDER}/samples/input ${INPUT_LOC} input $WORK_DIR $MAIN_FOLDER $INS_FOLDER
