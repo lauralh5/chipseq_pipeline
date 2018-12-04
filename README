@@ -1,5 +1,5 @@
 ===============================================================================================
-ChiP-seq pipeline Overview
+ChIP-seq pipeline Overview
 ===============================================================================================
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -45,9 +45,10 @@ working directory. This is where your results will be stored.
 EXAMPLE
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-This pipeline works with just one parameter. In the provided example it is a file called 
-"params.txt", which is included in the repository. Params contains all the routes  of the 
-parameters that will be needed for the data analysis of the example:
+This pipeline works with just one parameter. We provide an example script to test the software 
+called chipseq_pipeline_test. The parameter that is needed to run this script is a file called 
+"params_test.txt", which is included in the repository. This file contains all the routes of 
+the parameters that will be needed for the data analysis of the example:
 
 - installation_folder: contains the route of the folder that contains the chipseq_pipeline
 - working_directory: here you can specify where you want your data to be generated ("temp")
