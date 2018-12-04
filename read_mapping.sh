@@ -13,11 +13,11 @@ INS_FOLDER=$6
 ## Accession to the samples folders
 
 cd ${SAMPLE_DIR}
-cp ${SAMPLE_FILE} ${SAMPLE_TYPE}.fq.zip
-unzip ${SAMPLE_TYPE}.fq.zip
+cp ${SAMPLE_FILE} 
+unzip ${SAMPLE_TYPE}_prr5_chr1fastq.zip
 
 ## Mapping short reads to the reference genome
-bowtie -S -v 2 --best --strata -m 1 ../../genome/index ${SAMPLE_TYPE}.fq > ${SAMPLE_TYPE}.sam
+bowtie -S -v 2 --best --strata -m 1 ../../genome/index ${SAMPLE_TYPE}_prr5_chr1.fq > ${SAMPLE_TYPE}.sam
 
 ## Reading and writing on the blackboard
 echo ${SAMPLE_TYPE} DONE >> ../../log/blackboard

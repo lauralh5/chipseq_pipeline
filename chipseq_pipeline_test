@@ -36,16 +36,16 @@ mkdir input chip
 ## Accession to genome folder
 
 cd ../genome
-cp ${GENOME} genome.fa.zip
-unzip genome.fa.zip 
+cp ${GENOME} 
+unzip chromosome1fa.zip 
 
 ## Building genome index
 
-bowtie-build genome.fa index
+bowtie-build chromosome1.fa index
 
 cd ../annotation
-cp ${ANNOTATION} annotation.gtf.zip
-unzip annotation.gtf.zip
+cp ${ANNOTATION}
+unzip chromosome1gtf.zip
 
 ## Mapping lectures to the genome using the read_mapping.sh script
 

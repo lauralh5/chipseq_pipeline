@@ -22,7 +22,7 @@ echo "macs2 called succesfully" >> ../log/blackboard
 
 ## Peak Annotation
 
-java -jar $INS_FOLDER/PeakAnnotator.jar -u NDG -p peaks_summits.bed -a ../annotation/annotation.gtf -g all -o .
+java -jar $INS_FOLDER/PeakAnnotator.jar -u NDG -p peaks_summits.bed -a ../annotation/chromosome1.gtf -g all -o .
 
 echo "PeakAnnotator called successfully" >> ../log/blackboard
 
