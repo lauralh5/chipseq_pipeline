@@ -1,8 +1,8 @@
 installation_folder: /home/bag2/opt/chipseq_pipeline
 working_directory: /home/bag2/temp
 main_folder: prr5
-genome_folder: /home/bag2/opt/chipseq_pipeline/prr5_samples/genome/chromosome1fa.zip
-annotation_folder: /home/bag2/opt/chipseq_pipeline/prr5_samples/annotation/chromosome1gtf.zip
-chip_location: /home/bag2/opt/chipseq_pipeline/prr5_samples/samples/chip/chip_prr5_chr1fastq.zip
-input_location: /home/bag2/opt/chipseq_pipeline/prr5_samples/samples/input/input_prr5_chr1fastq.zip
+genome_folder: /home/bag2/opt/chipseq_pipeline/prr5_samples/genome/chromosome1.fa.zip
+annotation_folder: /home/bag2/opt/chipseq_pipeline/prr5_samples/annotation/chromosome1.gtf.zip
+chip_location: /home/bag2/opt/chipseq_pipeline/prr5_samples/samples/chip/chip_prr5_chr1.fastq.zip
+input_location: /home/bag2/opt/chipseq_pipeline/prr5_samples/samples/input/input_prr5_chr1.fastq.zip
 
