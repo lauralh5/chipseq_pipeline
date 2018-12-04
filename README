@@ -41,6 +41,9 @@ which normaly contains all the softwares.
 We also recommend to create an independent directory (for example "temp") to generate your 
 working directory. This is where your results will be stored.
 
+If you are going to download your sample data from the internet, save them in a located folder 
+and indicate the route to them in the params.txt file.
+
 //////////////////////////////////////////////////////////////////////////////////////////////
 EXAMPLE
 //////////////////////////////////////////////////////////////////////////////////////////////

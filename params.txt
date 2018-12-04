@@ -1,0 +1,7 @@
+installation_folder: /home/bag2/opt/chipseq_pipeline
+working_directory: /home/bag2/temp
+main_folder: 
+genome_url:
+annotation_url:
+chip_location:
+input_location:
