@@ -13,7 +13,8 @@ INS_FOLDER=$6
 ## Accession to the samples folders
 
 cd ${SAMPLE_DIR}
-cp ${SAMPLE_FILE} ${SAMPLE_TYPE}.fq
+cp ${SAMPLE_FILE} ${SAMPLE_TYPE}.fq.zip
+unzip ${SAMPLE_TYPE}.fq.zip
 
 ## Mapping short reads to the reference genome
 bowtie -S -v 2 --best --strata -m 1 ../../genome/index ${SAMPLE_TYPE}.fq > ${SAMPLE_TYPE}.sam
